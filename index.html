@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>feedr — search LCSC parts like an engineer, not a database admin</title>
+  <meta name="description" content="A workflow-first search for the LCSC / JLCPCB ecosystem. Semantic shorthand, tiered results, and brand reputation built in." />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@6.2/distr/fira_code.css" />
+  <link rel="stylesheet" href="./css/tokens.css" />
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/components.css" />
+  <link rel="stylesheet" href="./css/layout.css" />
+</head>
+<body>
+  <div data-nav></div>
+
+  <main>
+    <section class="wrap hero">
+      <h1>Search LCSC parts like an engineer, not a database admin.</h1>
+      <p class="hero__sub">
+        Type <span class="mono">100n 0402</span>. Get the JLC Basic cap at the top,
+        global-brand alternates in the middle, and economy options at the bottom —
+        already filtered, already priced, already sorted by what goes on your feeder.
+      </p>
+
+      <form class="hero__search" id="hero-search" role="search" autocomplete="off">
+        <label class="search-input search-hero">
+          <span class="search-input__glyph" aria-hidden="true">❯</span>
+          <input id="hero-input" name="q" placeholder="Try: 100n 0402 x7r · 10k 1% 0402 · STM32F103 · red led 0603" />
+          <button class="btn btn--primary" type="submit">Search</button>
+        </label>
+      </form>
+
+      <div class="chips hero__hints" id="hero-hints">
+        <span class="hero__hints-label">Try</span>
+      </div>
+    </section>
+
+    <section class="wrap" id="pillars">
+      <div class="pillars">
+        <article class="pillar">
+          <div class="pillar__num">01 / SEMANTIC PARSING</div>
+          <h3 class="pillar__title">Engineer's shorthand, finally understood.</h3>
+          <p class="pillar__body">
+            <span class="mono">100n</span> and <span class="mono">0.1uF</span> and
+            <span class="mono">100000pF</span> are the same capacitor. The search bar knows that.
+            Imperial <span class="mono">0402</span> and metric <span class="mono">1005</span> too.
+          </p>
+          <div class="pillar__demo">
+            <span class="mono">100n 0402 x7r</span>
+            <span class="arrow">→</span>
+            <span class="tag">Cat:Cap</span>
+            <span class="tag">Val:100nF</span>
+            <span class="tag">Pkg:0402</span>
+            <span class="tag">TempCo:X7R</span>
+          </div>
+        </article>
+
+        <article class="pillar">
+          <div class="pillar__num">02 / TIERED RESULTS</div>
+          <h3 class="pillar__title">Basic first. Always.</h3>
+          <p class="pillar__body">
+            JLC Basic parts are free to assemble and loaded on the primary feeders. If one exists for
+            your query, it's the first result. No hunting. No guessing.
+          </p>
+          <div class="pillar__demo">
+            <div><span class="tag" style="color:var(--accent-basic)">● BASIC</span> Samsung 100nF 0402 · 4.8M stock</div>
+            <div><span class="tag" style="color:var(--accent-tier1)">● GLOBAL</span> Murata 100nF 0402 · 185k stock</div>
+            <div><span class="tag" style="color:var(--accent-tier3)">● ECONOMY</span> Fenghua 100nF 0402 · 510k stock</div>
+          </div>
+        </article>
+
+        <article class="pillar">
+          <div class="pillar__num">03 / BRAND REPUTATION</div>
+          <h3 class="pillar__title">Domestic brands, decoded.</h3>
+          <p class="pillar__body">
+            LCSC lists thousands of manufacturers. <span class="mono">UNI-ROYAL</span> is the secret
+            hero of every JLC BOM. <span class="mono">Fenghua</span> is trustworthy.
+            <span class="mono">Worldsemi</span> invented the WS2812. We tag all of them.
+          </p>
+          <div class="pillar__demo">
+            <div>Murata · <span style="color:var(--accent-tier1)">Global · Popularity 99</span></div>
+            <div>UNI-ROYAL · <span style="color:var(--accent-tier3)">Economy · Popularity 94</span></div>
+          </div>
+        </article>
+
+        <article class="pillar">
+          <div class="pillar__num">04 / PARAMETRIC FILTERS</div>
+          <h3 class="pillar__title">Digi-Key filters, JLC economics.</h3>
+          <p class="pillar__body">
+            Values normalized to SI base units so sliders actually work.
+            Faceted multi-selects for tolerance, voltage, tempco, and brand.
+            Plus a single global toggle: <em>In-Stock &amp; PCBA Ready</em>.
+          </p>
+          <div class="pillar__demo">
+            <div>Value slider: <span class="tag">90 nF ─●─────●─ 110 nF</span></div>
+            <div>Tolerance: <span class="tag">☑ 1%  ☑ 5%  ☐ 10%</span></div>
+            <div>Global toggle: <span class="tag" style="color:var(--accent-basic)">● In-Stock &amp; PCBA Ready</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap walkthrough">
+      <h2>A day in the life of <span class="mono">100n 0402</span>.</h2>
+      <p class="walkthrough__lede">
+        The canonical decoupling capacitor. Every digital board needs a hundred. Here's what comes back.
+      </p>
+      <div class="walkthrough__bands" id="walkthrough"></div>
+    </section>
+
+    <footer class="wrap footer">
+      <div id="footer-meta">Loading snapshot…</div>
+      <div>Built as a concept — data is a curated subset of the real JLCPCB parts library.</div>
+    </footer>
+  </main>
+
+  <script type="module" src="./js/pages/landing.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "snapshot_date": "2026-04-19",
+  "source": "yaqwsx/jlcparts mirror of the JLCPCB component library",
+  "source_url": "https://yaqwsx.github.io/jlcparts/",
+  "part_count": 552757,
+  "categories": [
+    "capacitors",
+    "resistors",
+    "inductors",
+    "diodes",
+    "leds",
+    "mosfets",
+    "ics",
+    "connectors",
+    "crystals",
+    "other"
+  ],
+  "counts": {
+    "capacitors": 54873,
+    "resistors": 99417,
+    "inductors": 37333,
+    "diodes": 65478,
+    "leds": 7665,
+    "mosfets": 42220,
+    "ics": 81149,
+    "connectors": 89390,
+    "crystals": 13486,
+    "other": 61746
+  }
+}

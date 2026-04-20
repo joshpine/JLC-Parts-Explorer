@@ -1,0 +1,80 @@
+/* Design tokens — colors, type, spacing, motion. */
+
+:root {
+  /* Surfaces */
+  --bg-0: #070b11;
+  --bg-1: #0e141e;
+  --bg-2: #151d2a;
+  --bg-3: #1c2636;
+  --bg-hover: #233043;
+
+  /* Foreground */
+  --fg-0: #e7edf4;
+  --fg-1: #a3afbd;
+  --fg-2: #6a7685;
+  --fg-3: #485361;
+
+  /* Lines */
+  --border: #1f2836;
+  --border-strong: #2c3848;
+
+  /* Tier accents */
+  --accent-basic:       #3fd164;
+  --accent-basic-soft:  rgba(63, 209, 100, 0.14);
+  --accent-basic-line:  rgba(63, 209, 100, 0.40);
+  --accent-tier1:       #f0a732;
+  --accent-tier1-soft:  rgba(240, 167, 50, 0.14);
+  --accent-tier1-line:  rgba(240, 167, 50, 0.40);
+  --accent-tier3:       #8391a3;
+  --accent-tier3-soft:  rgba(131, 145, 163, 0.14);
+  --accent-tier3-line:  rgba(131, 145, 163, 0.40);
+
+  /* Interactive */
+  --accent-focus: #62a8ff;
+  --accent-focus-soft: rgba(98, 168, 255, 0.16);
+  --accent-danger: #f07070;
+
+  /* Typography */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --step-0: 13px;
+  --step-1: 15px;
+  --step-2: 18px;
+  --step-3: 24px;
+  --step-4: 34px;
+  --step-5: 52px;
+  --step-6: 72px;
+
+  --leading-tight: 1.15;
+  --leading-snug: 1.35;
+  --leading-normal: 1.55;
+
+  /* Spacing scale */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+
+  /* Radii */
+  --r-1: 4px;
+  --r-2: 8px;
+  --r-3: 12px;
+  --r-4: 16px;
+
+  /* Shadows */
+  --shadow-1: 0 1px 0 rgba(255,255,255,0.02) inset, 0 1px 2px rgba(0,0,0,0.4);
+  --shadow-2: 0 4px 18px rgba(0,0,0,0.35);
+  --shadow-glow-basic: 0 0 0 1px var(--accent-basic-line), 0 8px 24px -8px rgba(63,209,100,0.25);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-1: 120ms;
+  --dur-2: 220ms;
+  --dur-3: 360ms;
+}

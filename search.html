@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Search · feedr</title>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@6.2/distr/fira_code.css" />
+  <link rel="stylesheet" href="./css/tokens.css" />
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/components.css" />
+  <link rel="stylesheet" href="./css/layout.css" />
+</head>
+<body>
+  <div data-nav></div>
+
+  <main class="wrap search-page">
+    <form class="search-page__querybar" id="query-form" autocomplete="off">
+      <label class="search-input">
+        <span class="search-input__glyph" aria-hidden="true">❯</span>
+        <input id="q" name="q" placeholder="Search parts — e.g. 100n 0402 x7r" />
+        <button class="btn btn--primary" type="submit">Search</button>
+      </label>
+      <div class="chips" id="parsed-chips"></div>
+    </form>
+
+    <div class="search-page__body">
+      <aside class="search-page__rail" id="rail">
+        <div class="facet">
+          <div class="facet__title">Workflow</div>
+          <label class="facet__option">
+            <span class="toggle"><input type="checkbox" id="toggle-instock" checked /><span class="toggle__track"></span></span>
+            In-Stock &amp; PCBA Ready
+          </label>
+          <label class="facet__option" style="margin-top:6px">
+            <span class="toggle"><input type="checkbox" id="toggle-basiconly" /><span class="toggle__track"></span></span>
+            JLC Basic only
+          </label>
+        </div>
+        <div id="brand-facet"></div>
+        <div id="package-facet"></div>
+      </aside>
+
+      <section class="search-page__main" id="results"></section>
+    </div>
+  </main>
+
+  <script type="module" src="./js/pages/search-page.js"></script>
+</body>
+</html>
