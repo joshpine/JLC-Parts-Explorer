@@ -11,6 +11,7 @@ export function renderNav(active) {
       <div class="nav__links">
         <a href="./search.html" ${isA('search')}>Search</a>
         <a href="./category.html?cat=capacitors" ${isA('category')}>Browse</a>
+        <a href="./bom.html" ${isA('bom')}>BOM</a>
         <a href="./index.html#pillars">Overview</a>
       </div>
     </nav>

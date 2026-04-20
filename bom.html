@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BOM Tools · JLC Parts Explorer</title>
+  <meta name="description" content="Upload a BOM, assign LCSC parts, and export a JLC-friendly BOM CSV." />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@6.2/distr/fira_code.css" />
+  <link rel="stylesheet" href="./css/tokens.css" />
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/components.css" />
+  <link rel="stylesheet" href="./css/layout.css" />
+</head>
+<body>
+  <div data-nav></div>
+
+  <main class="wrap bom-page">
+    <header class="bom-page__header">
+      <div>
+        <h1>BOM assignment</h1>
+        <p class="bom-page__lede">Upload or paste a BOM, review candidate LCSC parts, and export a CSV for JLCPCB.</p>
+      </div>
+      <div class="bom-page__actions">
+        <button class="btn" id="bom-autofill" type="button" disabled>Auto-match all</button>
+        <button class="btn btn--primary" id="bom-export" type="button" disabled>Export JLC CSV</button>
+      </div>
+    </header>
+
+    <section class="bom-import">
+      <div class="card bom-import__panel">
+        <h3>Import BOM</h3>
+        <p class="muted">Supports CSV, TSV, and copy-pasted table data. Common columns such as designator, quantity, value/comment, package/footprint, MPN, and LCSC part number are detected automatically.</p>
+        <div class="bom-import__controls">
+          <label class="btn btn--primary bom-import__file">
+            <input id="bom-file" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values" hidden />
+            <span>Choose file</span>
+          </label>
+          <button class="btn" id="bom-load-text" type="button">Load pasted text</button>
+        </div>
+        <textarea id="bom-text" class="bom-import__textarea" placeholder="Paste BOM data here if you do not want to upload a file."></textarea>
+      </div>
+
+      <div class="card bom-import__panel">
+        <h3>Export format</h3>
+        <p class="muted">The exported CSV contains the columns typically required for JLC assembly uploads.</p>
+        <table class="spec">
+          <tbody>
+            <tr><td>Comment</td><td>Value or description from the BOM row</td></tr>
+            <tr><td>Designator</td><td>Reference designators exactly as uploaded</td></tr>
+            <tr><td>Footprint</td><td>Footprint or package column from the BOM row</td></tr>
+            <tr><td>LCSC Part #</td><td>Assigned LCSC part number</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="bom-summary card" id="bom-summary" hidden></section>
+    <section class="bom-rows" id="bom-rows"></section>
+  </main>
+
+  <script type="module" src="./js/pages/bom-page.js"></script>
+</body>
+</html>
