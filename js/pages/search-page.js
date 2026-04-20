@@ -44,7 +44,7 @@ function writeUrl() {
 function renderParsedRow(filters) {
   const host = document.getElementById('parsed-chips');
   const html = renderParsedChips(filters);
-  host.innerHTML = html || '<span class="muted" style="font-size:12px">No filters — showing best matches by stock.</span>';
+  host.innerHTML = html || '<span class="muted" style="font-size:12px">No parsed filters.</span>';
 }
 
 function renderRail(result, brands) {
@@ -105,7 +105,7 @@ function renderBands(result, brands) {
     host.innerHTML = `
       <div class="empty-state">
         <h3>No parts matched.</h3>
-        <p class="muted">Try loosening filters — the ${state.basicOnly ? 'Basic-only ' : ''}${state.inStockOnly ? 'in-stock ' : ''}toggles may be narrowing things.</p>
+        <p class="muted">No parts matched the current query and filters${state.basicOnly || state.inStockOnly ? ` (${state.basicOnly ? 'JLC Basic only' : ''}${state.basicOnly && state.inStockOnly ? ', ' : ''}${state.inStockOnly ? 'in stock' : ''})` : ''}.</p>
       </div>`;
     return;
   }

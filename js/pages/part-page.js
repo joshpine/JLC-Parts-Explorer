@@ -49,11 +49,11 @@ function reputationPanel(brandInfo, part) {
       <div class="reputation__brand">
         <div>
           <div class="cell-brand">${escape(part.mfr)}</div>
-          <div class="muted" style="font-size:11px">No brand metadata available.</div>
+          <div class="muted" style="font-size:11px">No local brand metadata.</div>
         </div>
       </div>`;
   }
-  const tierLabel = brandInfo.tier === 'global' ? 'Global Standard' : 'Economy / Domestic';
+  const tierLabel = brandInfo.tier === 'global' ? 'Global tier' : 'Economy tier';
   const tierColor = brandInfo.tier === 'global' ? 'var(--accent-tier1)' : 'var(--accent-tier3)';
   return `
     <div class="reputation">
@@ -66,7 +66,7 @@ function reputationPanel(brandInfo, part) {
       </div>
       <div>
         <div class="reputation__metric">
-          <span>Community popularity</span>
+          <span>Brand score</span>
           <span class="mono">${brandInfo.popularity}/100</span>
         </div>
         <div class="reputation__bar"><div class="reputation__bar-fill" style="width:${brandInfo.popularity}%;background:${tierColor}"></div></div>
@@ -132,11 +132,11 @@ async function render() {
   const alternates = await findAlternates(part, category, brands);
   const tierMeta = TIER_META[part.tier];
 
-  document.title = `${part.mpn} · ${part.mfr} · feedr`;
+  document.title = `${part.mpn} · ${part.mfr} · JLC Parts Explorer`;
 
   root.innerHTML = `
     <nav class="part-page__crumbs">
-      <a href="./index.html">feedr</a> ·
+      <a href="./index.html">JLC Parts Explorer</a> ·
       <a href="./category.html?cat=${category}">${titleCase(category)}</a> ·
       <span>${escape(part.package || '')}</span>
     </nav>
@@ -184,13 +184,13 @@ async function render() {
       </div>
 
       <aside>
-        <h4 style="margin:0 0 var(--sp-3)">Brand reputation</h4>
+        <h4 style="margin:0 0 var(--sp-3)">Brand metadata</h4>
         ${reputationPanel(brandInfo, part)}
 
         <h4 style="margin:var(--sp-6) 0 var(--sp-3)">Alternates${alternates.length ? '' : ' (none found)'}</h4>
         ${alternates.length
           ? `<div class="card" style="padding:0">${resultTable(alternates, category, brands)}</div>`
-          : `<div class="empty-state"><p class="muted">No same-value, same-package alternates in the snapshot.</p></div>`}
+          : `<div class="empty-state"><p class="muted">No matching alternates were found in the current snapshot.</p></div>`}
       </aside>
     </div>
   `;

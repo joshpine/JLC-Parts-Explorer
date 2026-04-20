@@ -15,10 +15,10 @@ export function tierBadge(tier) {
 export function contextBadges(part, brandInfo) {
   const out = [];
   if (part.tier === 'tier1' && brandInfo?.tier === 'global') {
-    out.push(`<span class="badge badge--tier1" title="Tier-1 global manufacturer">GLOBAL STANDARD</span>`);
+    out.push(`<span class="badge badge--tier1" title="Mapped to the global brand tier">GLOBAL TIER</span>`);
   }
   if (part.tier === 'tier3' && brandInfo?.popularity >= 85) {
-    out.push(`<span class="badge badge--tier3" title="High community usage volume">HIGH POPULARITY</span>`);
+    out.push(`<span class="badge badge--tier3" title="High score in the local brand metadata">HIGH SCORE</span>`);
   }
   if (/automotive|AEC-Q/i.test(part.desc || '')) {
     out.push(`<span class="badge" style="color:var(--accent-focus)">AUTOMOTIVE</span>`);

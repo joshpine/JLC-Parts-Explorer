@@ -6,12 +6,12 @@ export function renderNav(active) {
     <nav class="nav">
       <a href="./index.html" class="nav__brand">
         <span class="nav__brand-mark" aria-hidden="true"></span>
-        <span>feedr</span>
+        <span>JLC Parts Explorer</span>
       </a>
       <div class="nav__links">
         <a href="./search.html" ${isA('search')}>Search</a>
         <a href="./category.html?cat=capacitors" ${isA('category')}>Browse</a>
-        <a href="./index.html#pillars">Why</a>
+        <a href="./index.html#pillars">Overview</a>
       </div>
     </nav>
   `;
