@@ -1,8 +1,8 @@
 {
-  "snapshot_date": "2026-04-23",
+  "snapshot_date": "2026-04-24",
   "source": "yaqwsx/jlcparts mirror of the JLCPCB component library",
   "source_url": "https://yaqwsx.github.io/jlcparts/",
-  "part_count": 562952,
+  "part_count": 562953,
   "categories": [
     "capacitors",
     "resistors",
@@ -25,6 +25,6 @@
     "ics": 82903,
     "connectors": 95372,
     "crystals": 14264,
-    "other": 63333
+    "other": 63334
   }
 }
